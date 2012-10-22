@@ -29,7 +29,10 @@ int initSDL()
 
 void cleanSDL()
 {
-	SDL_FreeSurface(image);
+	if(image != NULL)
+	{
+		SDL_FreeSurface(image);
+	}
 	SDL_JoystickClose(joy);
 	SDL_Quit();
 }
@@ -127,6 +130,7 @@ int main(int argc, char *argv[])
 		image = loadImage(argv[1]);
 		if(image == NULL)
 		{
+			cleanSDL();
 			return 1;
 		}
 
