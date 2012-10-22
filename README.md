@@ -12,5 +12,3 @@ viewimg image.png
 
 License:
 Public Domain
-
-
